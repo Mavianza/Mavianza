@@ -14,4 +14,4 @@ Saya mahasiswa Teknik Informatika di Universitas Mataram. Saya suka membuat prot
 
 Streak memakai kalender kontribusi 365 hari terakhir. Komposisi bahasa dihitung dari ukuran kode di repo publik, dengan fork dan repo profil dikecualikan.
 
-[Lihat kalender kontribusi](https://github.com/Mavianza?tab=overview#contribution-graph)
+[Lihat kalender kontribusi](https://github.com/Mavianza#js-contribution-activity-description)
