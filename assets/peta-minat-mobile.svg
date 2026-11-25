@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="397" viewBox="0 0 400 397" role="img" aria-labelledby="title description">
+  <title id="title">Alfath Mavianza</title>
+  <desc id="description">Tiga cabang minat Alfath, yaitu antarmuka web, sistem informasi, dan multimedia interaktif.</desc>
+  <style>
+    .name { font: 45px Georgia, "Liberation Serif", serif; fill: #f9f3e7; letter-spacing: -1.2px; }
+    .affiliation { font: 17px system-ui, sans-serif; fill: #c4d2dc; }
+    .branch-name { font: 27px Georgia, "Liberation Serif", serif; fill: #f9f3e7; }
+    .branch-note { font: 16px system-ui, sans-serif; fill: #b6c8d4; }
+    .traces { stroke: #8aedd3; stroke-width: 2.8; fill: none; stroke-linecap: round; }
+    .trace { stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0; animation: trace .76s cubic-bezier(.2,.65,.25,1) var(--wait, 0s) both; }
+    .halo { transform-box: fill-box; transform-origin: center; opacity: 0; animation: arrive .64s ease-out var(--wait) both; }
+    @keyframes trace {
+      0% { stroke-dashoffset: 100; opacity: 1; }
+      73% { stroke-dashoffset: 0; opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+    @keyframes arrive {
+      0% { transform: scale(.45); opacity: 0; }
+      24% { opacity: .86; }
+      100% { transform: scale(1.28); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .trace, .halo { animation: none; display: none; }
+    }
+  </style>
+  <rect width="400" height="397" rx="10" fill="#101e2c"/>
+  <path d="M25 25H375M25 372H375" fill="none" stroke="#314858"/>
+  <text class="name" x="24" y="80">Alfath Mavianza</text>
+  <text class="affiliation" x="26" y="113">Teknik Informatika</text>
+  <text class="affiliation" x="26" y="136">Universitas Mataram</text>
+
+  <g fill="none" stroke="#4f7881" stroke-width="1.6" stroke-linecap="round">
+    <path id="trunk" pathLength="100" d="M31 162V317"/>
+    <path id="web" pathLength="100" d="M31 180Q31 186 43 186H66"/>
+    <path id="information" pathLength="100" d="M31 248Q31 254 43 254H66"/>
+    <path id="multimedia" pathLength="100" d="M31 317Q31 323 43 323H66"/>
+  </g>
+  <g class="traces" aria-hidden="true">
+    <use href="#trunk" class="trace"/>
+    <use href="#web" class="trace" style="--wait:.29s"/>
+    <use href="#information" class="trace" style="--wait:.68s"/>
+    <use href="#multimedia" class="trace" style="--wait:1.07s"/>
+  </g>
+  <g fill="#101e2c" stroke="#8aedd3" stroke-width="1.65">
+    <circle cx="31" cy="162" r="4.5" fill="#8aedd3"/>
+    <circle cx="66" cy="186" r="4"/>
+    <circle cx="66" cy="254" r="4"/>
+    <circle cx="66" cy="323" r="4"/>
+  </g>
+  <g fill="none" stroke="#8aedd3" stroke-width="1.3" aria-hidden="true">
+    <circle class="halo" cx="66" cy="186" r="9" style="--wait:.84s"/>
+    <circle class="halo" cx="66" cy="254" r="9" style="--wait:1.23s"/>
+    <circle class="halo" cx="66" cy="323" r="9" style="--wait:1.62s"/>
+  </g>
+  <text class="branch-name" x="86" y="193">Antarmuka web</text>
+  <text class="branch-note" x="87" y="215">Alur pengguna dan prototipe</text>
+  <text class="branch-name" x="86" y="261">Sistem informasi</text>
+  <text class="branch-note" x="87" y="283">Data dan proses administrasi</text>
+  <text class="branch-name" x="86" y="330">Multimedia interaktif</text>
+  <text class="branch-note" x="87" y="352">AR dan pembelajaran visual</text>
+</svg>
