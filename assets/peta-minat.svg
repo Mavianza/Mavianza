@@ -1,62 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="352" viewBox="0 0 800 352" role="img" aria-labelledby="title description">
-  <title id="title">Alfath Mavianza</title>
-  <desc id="description">Tiga cabang minat Alfath, yaitu antarmuka web, sistem informasi, dan multimedia interaktif.</desc>
-  <style>
-    .name { font: 65px Georgia, "Liberation Serif", serif; fill: #f9f3e7; letter-spacing: -2px; }
-    .affiliation { font: 19px system-ui, sans-serif; fill: #c4d2dc; }
-    .branch-name { font: 25px Georgia, "Liberation Serif", serif; fill: #f9f3e7; }
-    .branch-note { font: 16px system-ui, sans-serif; fill: #b6c8d4; }
-    .traces { stroke: #8aedd3; stroke-width: 3; fill: none; stroke-linecap: round; }
-    .trace { stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0; animation: trace var(--duration, 1s) cubic-bezier(.2,.65,.25,1) var(--wait, 0s) both; }
-    .halo { transform-box: fill-box; transform-origin: center; opacity: 0; animation: arrive .65s ease-out var(--wait) both; }
-    @keyframes trace {
-      0% { stroke-dashoffset: 100; opacity: 1; }
-      73% { stroke-dashoffset: 0; opacity: 1; }
-      100% { stroke-dashoffset: 0; opacity: 0; }
-    }
-    @keyframes arrive {
-      0% { transform: scale(.45); opacity: 0; }
-      24% { opacity: .86; }
-      100% { transform: scale(1.28); opacity: 0; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .trace, .halo { animation: none; display: none; }
-    }
-  </style>
-  <rect width="800" height="352" rx="10" fill="#101e2c"/>
-  <path d="M39 40H761M39 312H761" fill="none" stroke="#314858"/>
-  <text class="name" x="37" y="133">Alfath</text>
-  <text class="name" x="37" y="196">Mavianza</text>
-  <text class="affiliation" x="40" y="242">Teknik Informatika</text>
-  <text class="affiliation" x="40" y="268">Universitas Mataram</text>
-
-  <g fill="none" stroke="#4f7881" stroke-width="1.6" stroke-linecap="round">
-    <path id="trunk" pathLength="100" d="M342 175H398"/>
-    <path id="web" pathLength="100" d="M398 175C445 175 428 86 475 86H509"/>
-    <path id="information" pathLength="100" d="M398 175H509"/>
-    <path id="multimedia" pathLength="100" d="M398 175C445 175 428 264 475 264H509"/>
-  </g>
-  <g class="traces" aria-hidden="true">
-    <use href="#trunk" class="trace" style="--duration:.65s"/>
-    <use href="#web" class="trace" style="--wait:.46s"/>
-    <use href="#information" class="trace" style="--wait:.84s"/>
-    <use href="#multimedia" class="trace" style="--wait:1.22s"/>
-  </g>
-  <g fill="#101e2c" stroke="#8aedd3" stroke-width="1.65">
-    <circle cx="342" cy="175" r="7" fill="#8aedd3"/>
-    <circle cx="509" cy="86" r="5"/>
-    <circle cx="509" cy="175" r="5"/>
-    <circle cx="509" cy="264" r="5"/>
-  </g>
-  <g fill="none" stroke="#8aedd3" stroke-width="1.3" aria-hidden="true">
-    <circle class="halo" cx="509" cy="86" r="11" style="--wait:1.18s"/>
-    <circle class="halo" cx="509" cy="175" r="11" style="--wait:1.56s"/>
-    <circle class="halo" cx="509" cy="264" r="11" style="--wait:1.94s"/>
-  </g>
-  <text class="branch-name" x="530" y="87">Antarmuka web</text>
-  <text class="branch-note" x="530" y="110">Alur pengguna dan prototipe</text>
-  <text class="branch-name" x="530" y="176">Sistem informasi</text>
-  <text class="branch-note" x="530" y="199">Data dan proses administrasi</text>
-  <text class="branch-name" x="530" y="265">Multimedia interaktif</text>
-  <text class="branch-note" x="530" y="288">AR dan pembelajaran visual</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="318" viewBox="0 0 800 318" role="img" aria-labelledby="title description">
+<title id="title">Alfath Mavianza</title>
+<desc id="description">Peta minat dalam gaya pixel art. Monitor terhubung ke penyimpanan data dan layar multimedia. Antarmuka web, sistem informasi, dan multimedia interaktif.</desc>
+<style>
+  .affiliation { font: 500 18px system-ui, sans-serif; fill: #b4c6bf; }
+  .topic { font: 600 16px system-ui, sans-serif; fill: #fbefd2; }
+  @media (prefers-reduced-motion: reduce) { .motion-only { display: none; } }
+</style>
+<path d="M10 0H790V5H795V10H800V308H795V313H790V318H10V313H5V308H0V10H5V5H10Z" fill="#111c27" shape-rendering="crispEdges"/>
+<rect x="36" y="44" width="64" height="4" fill="#efb46e"/>
+<g transform="translate(36 68)" shape-rendering="crispEdges">
+<path d="M6 0h18v6h-18Z M0 6h12v6h-12Z M18 6h12v6h-12Z M0 12h12v6h-12Z M18 12h12v6h-12Z M0 18h30v6h-30Z M0 24h12v6h-12Z M18 24h12v6h-12Z M0 30h12v6h-12Z M18 30h12v6h-12Z M0 36h12v6h-12Z M18 36h12v6h-12Z M36 0h12v6h-12Z M36 6h12v6h-12Z M36 12h12v6h-12Z M36 18h12v6h-12Z M36 24h12v6h-12Z M36 30h12v6h-12Z M36 36h30v6h-30Z M72 0h30v6h-30Z M72 6h12v6h-12Z M72 12h12v6h-12Z M72 18h24v6h-24Z M72 24h12v6h-12Z M72 30h12v6h-12Z M72 36h12v6h-12Z M114 0h18v6h-18Z M108 6h12v6h-12Z M126 6h12v6h-12Z M108 12h12v6h-12Z M126 12h12v6h-12Z M108 18h30v6h-30Z M108 24h12v6h-12Z M126 24h12v6h-12Z M108 30h12v6h-12Z M126 30h12v6h-12Z M108 36h12v6h-12Z M126 36h12v6h-12Z M144 0h30v6h-30Z M156 6h6v6h-6Z M156 12h6v6h-6Z M156 18h6v6h-6Z M156 24h6v6h-6Z M156 30h6v6h-6Z M156 36h6v6h-6Z M180 0h12v6h-12Z M198 0h12v6h-12Z M180 6h12v6h-12Z M198 6h12v6h-12Z M180 12h12v6h-12Z M198 12h12v6h-12Z M180 18h30v6h-30Z M180 24h12v6h-12Z M198 24h12v6h-12Z M180 30h12v6h-12Z M198 30h12v6h-12Z M180 36h12v6h-12Z M198 36h12v6h-12Z" fill="#efb46e"/>
+</g>
+<g transform="translate(36 124)" shape-rendering="crispEdges">
+<path d="M0 0h7v7h-7Z M28 0h7v7h-7Z M0 7h14v7h-14Z M21 7h14v7h-14Z M0 14h35v7h-35Z M0 21h7v7h-7Z M14 21h7v7h-7Z M28 21h7v7h-7Z M0 28h7v7h-7Z M28 28h7v7h-7Z M0 35h7v7h-7Z M28 35h7v7h-7Z M0 42h7v7h-7Z M28 42h7v7h-7Z M49 0h21v7h-21Z M42 7h14v7h-14Z M63 7h14v7h-14Z M42 14h14v7h-14Z M63 14h14v7h-14Z M42 21h35v7h-35Z M42 28h14v7h-14Z M63 28h14v7h-14Z M42 35h14v7h-14Z M63 35h14v7h-14Z M42 42h14v7h-14Z M63 42h14v7h-14Z M84 0h14v7h-14Z M105 0h14v7h-14Z M84 7h14v7h-14Z M105 7h14v7h-14Z M84 14h14v7h-14Z M105 14h14v7h-14Z M84 21h14v7h-14Z M105 21h14v7h-14Z M91 28h7v7h-7Z M105 28h7v7h-7Z M91 35h7v7h-7Z M105 35h7v7h-7Z M98 42h7v7h-7Z M126 0h35v7h-35Z M140 7h7v7h-7Z M140 14h7v7h-7Z M140 21h7v7h-7Z M140 28h7v7h-7Z M140 35h7v7h-7Z M126 42h35v7h-35Z M175 0h21v7h-21Z M168 7h14v7h-14Z M189 7h14v7h-14Z M168 14h14v7h-14Z M189 14h14v7h-14Z M168 21h35v7h-35Z M168 28h14v7h-14Z M189 28h14v7h-14Z M168 35h14v7h-14Z M189 35h14v7h-14Z M168 42h14v7h-14Z M189 42h14v7h-14Z M210 0h14v7h-14Z M238 0h7v7h-7Z M210 7h21v7h-21Z M238 7h7v7h-7Z M210 14h21v7h-21Z M238 14h7v7h-7Z M210 21h14v7h-14Z M231 21h14v7h-14Z M210 28h14v7h-14Z M231 28h14v7h-14Z M210 35h14v7h-14Z M238 35h7v7h-7Z M210 42h14v7h-14Z M238 42h7v7h-7Z M252 0h35v7h-35Z M273 7h14v7h-14Z M266 14h14v7h-14Z M259 21h14v7h-14Z M252 28h14v7h-14Z M252 35h14v7h-14Z M252 42h35v7h-35Z M301 0h21v7h-21Z M294 7h14v7h-14Z M315 7h14v7h-14Z M294 14h14v7h-14Z M315 14h14v7h-14Z M294 21h35v7h-35Z M294 28h14v7h-14Z M315 28h14v7h-14Z M294 35h14v7h-14Z M315 35h14v7h-14Z M294 42h14v7h-14Z M315 42h14v7h-14Z" fill="#fbefd2"/>
+</g>
+<text class="affiliation" x="36" y="207">Teknik Informatika</text>
+<text class="affiliation" x="36" y="231">Universitas Mataram</text>
+<g transform="translate(410 24)" shape-rendering="crispEdges">
+<path d="M12 0H344V8H356V204H348V220H12V212H0V12H12Z" fill="#192b36"/>
+<path d="M12 0H344V4H16V12H0V8H12Z" fill="#35515b"/>
+<path d="M8 208H348V204H356V216H12V212H8Z" fill="#213940"/>
+<rect x="14" y="16" width="8" height="8" fill="#35515b"/>
+<rect x="334" y="16" width="8" height="8" fill="#35515b"/>
+<rect x="14" y="198" width="8" height="8" fill="#35515b"/>
+<rect x="334" y="198" width="8" height="8" fill="#35515b"/>
+<path d="M176 120V132H74V148 M176 120V132H298V140" fill="none" stroke="#537b74" stroke-width="4"/>
+<rect x="170" y="126" width="12" height="12" fill="#82aa94"/>
+<rect x="68" y="142" width="12" height="12" fill="#b08456"/>
+<rect x="292" y="134" width="12" height="12" fill="#72a895"/>
+<g transform="translate(104 12)" shape-rendering="crispEdges">
+<path d="M8 0H140V8H148V84H140V92H0V8H8Z" fill="#efb46e"/>
+<path d="M136 0H140V8H148V84H140V92H132V84H136Z" fill="#a76b47"/>
+<rect x="8" y="8" width="8" height="68" fill="#fbefd2"/>
+<rect x="16" y="8" width="112" height="4" fill="#fbefd2"/>
+<rect x="16" y="16" width="112" height="56" fill="#111c27"/>
+<rect x="24" y="24" width="96" height="8" fill="#467f70"/>
+<rect x="28" y="28" width="4" height="4" fill="#92e1bb"/>
+<rect x="36" y="28" width="4" height="4" fill="#92e1bb"/>
+<rect x="24" y="36" width="24" height="28" fill="#2a4d4d"/>
+<rect x="28" y="40" width="12" height="4" fill="#89b8a3"/>
+<rect x="28" y="48" width="16" height="4" fill="#89b8a3"/>
+<rect x="52" y="36" width="68" height="28" fill="#365c58"/>
+<rect x="56" y="40" width="56" height="12" fill="#92e1bb"/>
+<rect x="56" y="56" width="36" height="4" fill="#92b8a4"/>
+<path d="M104 44H108V48H112V52H116V56H112V60H108V56H104Z" fill="#fbefd2"/>
+<rect x="108" y="80" width="12" height="4" fill="#654a3f"/>
+<rect x="44" y="92" width="56" height="8" fill="#a76b47"/>
+<rect x="36" y="100" width="72" height="8" fill="#efb46e"/>
+<rect x="52" y="100" width="40" height="4" fill="#fbefd2"/>
+</g>
+<g transform="translate(22 150)" shape-rendering="crispEdges">
+<path d="M8 0H96V4H104V12H96V16H0V4H8Z" fill="#efb46e"/>
+<rect x="4" y="12" width="92" height="4" fill="#a76b47"/>
+<rect x="12" y="4" width="40" height="4" fill="#77523d"/>
+<rect x="72" y="4" width="8" height="4" fill="#111c27"/>
+<rect x="84" y="4" width="8" height="4" fill="#fbefd2"/>
+<path d="M8 16H96V20H104V28H96V32H0V20H8Z" fill="#efb46e"/>
+<rect x="4" y="28" width="92" height="4" fill="#a76b47"/>
+<rect x="12" y="20" width="40" height="4" fill="#77523d"/>
+<rect x="72" y="20" width="8" height="4" fill="#111c27"/>
+<rect x="84" y="20" width="8" height="4" fill="#fbefd2"/>
+<path d="M8 32H96V36H104V44H96V48H0V36H8Z" fill="#efb46e"/>
+<rect x="4" y="44" width="92" height="4" fill="#a76b47"/>
+<rect x="12" y="36" width="40" height="4" fill="#77523d"/>
+<rect x="72" y="36" width="8" height="4" fill="#111c27"/>
+<rect x="84" y="36" width="8" height="4" fill="#fbefd2"/>
+</g>
+<g transform="translate(248 142)" shape-rendering="crispEdges">
+<path d="M4 0H96V4H104V56H100V60H0V4H4Z" fill="#6aa99b"/>
+<rect x="4" y="4" width="96" height="4" fill="#92e1bb"/>
+<rect x="8" y="12" width="88" height="40" fill="#233f45"/>
+<path d="M12 44H24V36H32V28H40V32H48V40H60V32H68V24H76V28H84V36H92V48H12Z" fill="#51806d"/>
+<rect x="56" y="20" width="8" height="8" fill="#78b299"/>
+<path d="M14 16H26V20H18V28H14Z" fill="#fbefd2"/>
+<path d="M78 16H90V28H86V20H78Z" fill="#fbefd2"/>
+<path d="M14 36H18V44H26V48H14Z" fill="#fbefd2"/>
+<path d="M90 36H86V44H78V48H90Z" fill="#fbefd2"/>
+<rect x="38" y="60" width="28" height="4" fill="#4c7c75"/>
+</g>
+<g class="motion-only" opacity="0" shape-rendering="crispEdges">
+<rect x="-3" y="-3" width="6" height="6" fill="#efb46e"/>
+<animateMotion path="M176 120V132H74V148" begin="0.55s" dur="1.15s"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.84;1" begin="0.55s" dur="1.15s"/>
+</g>
+<g class="motion-only" opacity="0" shape-rendering="crispEdges">
+<rect x="-3" y="-3" width="6" height="6" fill="#92e1bb"/>
+<animateMotion path="M176 120V132H298V140" begin="1.32s" dur="1.2s"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.84;1" begin="1.32s" dur="1.2s"/>
+</g>
+<g class="motion-only" opacity="0">
+<rect x="106" y="154" width="8" height="4" fill="#92e1bb"/>
+<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.2;1" begin="1.63s" dur="0.36s"/>
+</g>
+<g class="motion-only" opacity="0">
+<rect x="304" y="162" width="8" height="8" fill="#92e1bb"/>
+<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.2;1" begin="2.46s" dur="0.36s"/>
+</g>
+</g>
+<rect x="34" y="267" width="732" height="1" fill="#35515b"/>
+<g transform="translate(36 284)">
+<path d="M0 0H16V12H0Z M3 4V9H13V4Z" fill="#efb46e" fill-rule="evenodd"/>
+<text class="topic" x="24" y="12">Antarmuka web</text>
+</g>
+<g transform="translate(291 284)">
+<rect x="0" y="0" width="16" height="3" fill="#efb46e"/>
+<rect x="0" y="5" width="16" height="3" fill="#efb46e"/>
+<rect x="0" y="10" width="16" height="3" fill="#efb46e"/>
+<text class="topic" x="24" y="12">Sistem informasi</text>
+</g>
+<g transform="translate(540 284)">
+<path d="M0 0H6V3H3V6H0Z M10 0H16V6H13V3H10Z M0 7H3V10H6V13H0Z M13 7H16V13H10V10H13Z" fill="#92e1bb"/>
+<text class="topic" x="24" y="12">Multimedia interaktif</text>
+</g>
 </svg>

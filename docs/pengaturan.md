@@ -20,6 +20,14 @@ Tes memakai respons GitHub sintetis untuk memeriksa alur pembaruan, pergantian h
 
 ## Desain
 
-Tipografi serif membedakan nama dan topik dari angka serta keterangan. Bidang navy memberi kontras pada garis mint yang mengarahkan mata dari nama ke tiga minat. Panel statistik memakai warna kertas agar hierarki peta dan angka terlihat jelas. Peta ponsel memiliki komposisi vertikal dengan teks yang lebih besar. Animasi berlangsung sekitar 2,6 detik, berhenti setelah satu putaran, dan menghormati pengaturan pengurangan gerak.
+Banner memakai pixel art 16-bit dengan fokus kuat pada nama. Skala desainnya 3 untuk energi, 3 untuk variasi komposisi, dan 2 untuk gerak.
+
+- Kisi 5×7 memberi bentuk piksel pada nama. Teks penjelas memakai huruf sistem supaya mudah dibaca.
+- Bidang tinta gelap memberi kontras pada huruf warna kertas. Warna tembaga menandai perangkat, dan mint menyorot data.
+- Monitor, penyimpanan, dan bingkai visual menggambarkan antarmuka web, sistem informasi, dan multimedia. Ketiganya berada dalam satu ilustrasi, dengan jarak yang menjaga nama tetap dominan.
+- Susunan ponsel menempatkan ilustrasi di bawah nama supaya teks dan gambar tetap terbaca. Kartu statistik memakai sudut bertangga dan grafik yang sejajar dengan kisi piksel.
+- Sinyal bergerak dari monitor ke dua perangkat untuk menunjukkan relasi minat. Animasi selesai dalam 2,8 detik dan menghormati preferensi pengurangan gerak.
+
+Buat ulang kedua banner dengan `python3 scripts/render_banner.py`. Panel statistik dirender oleh `scripts/profile_stats.py` saat GitHub Actions mengambil data.
 
 Rujukan [README profil](https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme), [kalender GitHub](https://docs.github.com/en/graphql/reference/users), dan [jadwal GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).

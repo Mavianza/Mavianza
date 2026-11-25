@@ -17,8 +17,12 @@ DAY = timedelta(days=1)
 WINDOW = 365
 PAGE_SIZE = 100
 CARD_WIDTH = 370
-CARD_HEIGHT = 214
+CARD_HEIGHT = 224
 ASSETS = Path(__file__).resolve().parents[1] / "assets"
+CARD_INK = "#192b36"
+CARD_SEAM = "#35515b"
+DATA_MINT = "#92e1bb"
+EMPTY_BAR = "#74918f"
 CALENDAR_QUERY = """
 query ProfileCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
   user(login: $login) {
@@ -181,37 +185,40 @@ def card(title: str, description: str, body: list[str], date_label: str = "") ->
         f'<title id="title">{escape(title)}</title>',
         f'<desc id="description">{escape(description)}</desc>',
         '<style>',
-        '  .heading { font: 26px Georgia, "Liberation Serif", serif; fill: #152733; }',
-        '  .value { font: 32px Georgia, "Liberation Serif", serif; fill: #152733; }',
-        '  .small { font: 13px system-ui, sans-serif; fill: #475953; }',
-        '  .row { font: 14px system-ui, sans-serif; fill: #152733; }',
+        '  .heading { font: 700 22px system-ui, sans-serif; fill: #fbefd2; }',
+        '  .value { font: 700 21px ui-monospace, monospace; fill: #fbefd2; }',
+        f'  .primary-value {{ font: 800 42px ui-monospace, monospace; fill: {DATA_MINT}; }}',
+        '  .small { font: 13px system-ui, sans-serif; fill: #b4c6bf; }',
+        '  .row { font: 14px system-ui, sans-serif; fill: #fbefd2; }',
         '</style>',
-        '<rect x=".5" y=".5" width="369" height="213" rx="9" fill="#f5f0e4" stroke="#d9d2c3"/>',
+        f'<path d="M8 .5H362V4H366V8H369.5V216H366V220H362V223.5H8V220H4V216H.5V8H4V4H8Z" fill="{CARD_INK}" stroke="{CARD_SEAM}" shape-rendering="crispEdges"/>',
         label(20, 36, "heading", title),
         *body,
     ]
     if date_label:
-        children.append(label(349, 196, "small", date_label, right=True))
+        children.append(label(349, 205, "small", date_label, right=True))
     return "\n".join(children + ["</svg>", ""])
 
 
 def render_streak(activity: Activity, as_of: date) -> str:
-    columns = [
-        (20, "Streak aktif", activity.current),
-        (136, "Rekor hari", activity.longest),
-        (244, "Kontribusi", activity.total),
+    body = [
+        label(20, 58, "small", "Kalender 365 hari"),
+        label(20, 113, "primary-value", numeric(activity.current)),
+        label(20, 134, "small", "Streak aktif"),
+        label(171, 89, "small", "Rekor hari"),
+        label(349, 89, "value", numeric(activity.longest), right=True),
+        f'<path d="M171 100H350" fill="none" stroke="{CARD_SEAM}"/>',
+        label(171, 124, "small", "Kontribusi"),
+        label(349, 124, "value", numeric(activity.total), right=True),
+        f'<path d="M20 187H350" fill="none" stroke="{CARD_SEAM}"/>',
     ]
-    body = [label(20, 58, "small", "Kalender 365 hari")]
-    for x, title, value in columns:
-        body.extend([label(x, 103, "value", numeric(value)), label(x, 124, "small", title)])
-    body.append('<path d="M20 176H350" fill="none" stroke="#b5bdb0"/>')
     peak = max(1, *activity.recent)
     for index, count in enumerate(activity.recent):
-        height = 2 if count == 0 else max(4, round(count * 38 / peak))
-        fill = "#216d60" if count else "#b5bdb0"
+        height = 2 if count == 0 else max(4, 4 * round(count * 10 / peak))
+        fill = DATA_MINT if count else EMPTY_BAR
         x = 20 + index * 11
-        body.append(f'<rect x="{x}" y="{176 - height}" width="8" height="{height}" rx="1.5" fill="{fill}"/>')
-    body.append(label(20, 196, "small", "30 hari terakhir"))
+        body.append(f'<rect x="{x}" y="{187 - height}" width="7" height="{height}" fill="{fill}" shape-rendering="crispEdges"/>')
+    body.append(label(20, 205, "small", "30 hari terakhir"))
     desc = (
         f"Streak aktif {activity.current} hari. Rekor {activity.longest} hari. "
         f"{activity.total} kontribusi dalam 365 hari."
@@ -229,24 +236,24 @@ def render_languages(totals: Counter, repo_count: int, as_of: date) -> str:
 
     description = []
     for index, (name, size) in enumerate(language_rows(totals)):
-        y = 85 + index * 20
+        y = 86 + index * 22
         share = percentage(size, total)
         description.append(f"{name} {share}")
         display = name if len(name) <= 18 else name[:17].rstrip() + "…"
         body.extend([
             label(20, y, "row", display),
-            f'<rect x="162" y="{y - 9}" width="121" height="8" rx="2" fill="#d7ddd1"/>',
-            f'<rect x="162" y="{y - 9}" width="{121 * size / total:.3f}" height="8" rx="2" fill="#216d60"/>',
+            f'<rect x="162" y="{y - 9}" width="121" height="8" fill="{CARD_SEAM}"/>',
+            f'<rect x="162" y="{y - 9}" width="{121 * size / total:.3f}" height="8" fill="{DATA_MINT}"/>',
             label(349, y, "row", share, right=True),
         ])
-    body.append(label(20, 196, "small", f"{numeric(repo_count)} repo dengan data bahasa"))
+    body.append(label(20, 205, "small", f"{numeric(repo_count)} repo dengan data bahasa"))
     return card("Bahasa repositori", ". ".join(description), body, as_of.isoformat())
 
 
 def initial_card(title: str, subtitle: str) -> str:
     return card(title, "Menunggu pembaruan dari GitHub.", [
         label(20, 61, "small", subtitle),
-        '<path d="M20 93H350" fill="none" stroke="#b5bdb0"/>',
+        f'<path d="M20 93H350" fill="none" stroke="{CARD_SEAM}"/>',
         label(20, 130, "row", "Menunggu pembaruan dari GitHub."),
         label(20, 155, "small", "Data akan tampil setelah sinkronisasi pertama."),
     ])
