@@ -44,11 +44,14 @@ class BannerTest(unittest.TestCase):
                 opening = animations_in(image, "opening")
                 idle = animations_in(image, "idle")
                 opening_end = max(time_seconds(a, "begin") + time_seconds(a, "dur") for a in opening)
+                opening_routes = {a.get("path") for a in opening if a.tag == f"{SVG}animateMotion"}
+                idle_routes = {a.get("path") for a in idle if a.tag == f"{SVG}animateMotion"}
                 self.assertLess(opening_end, 3)
-                self.assertEqual(sum(a.tag == f"{SVG}animateMotion" for a in opening), 2)
+                self.assertEqual(len(opening_routes), 2)
                 self.assertTrue(all(a.get("repeatCount") is None for a in opening))
-                self.assertEqual(len(idle), 2)
-                self.assertEqual(len(set(a.get("dur") for a in idle)), 2)
+                self.assertTrue(opening_routes < idle_routes)
+                self.assertEqual(len(idle_routes), 3)
+                self.assertTrue(any(a.get("attributeName") == "x" for a in idle))
                 for animation in idle:
                     self.assertEqual(animation.get("repeatCount"), "indefinite")
                     self.assertGreater(time_seconds(animation, "begin"), opening_end)

@@ -13,6 +13,9 @@ MUTED = "#b4c6bf"
 MINT = "#92e1bb"
 GOLD = "#efb46e"
 COPPER = "#a76b47"
+IDLE_START = 3.05
+DEVICE_CYCLE = 5.6
+PACKET_ARRIVAL = 0.25
 
 LETTER_GRID = {
     "A": ("01110", "11011", "11011", "11111", "11011", "11011", "11011"),
@@ -107,12 +110,32 @@ def screen_startup():
     ]
 
 
-def idle_light(x, y, width, height, color, start, period):
-    return animated_rect(x, y, width, height, color, [
-        '<animate attributeName="opacity" values="0;0;0.92;0.92;0;0"'
-        ' keyTimes="0;0.06;0.14;0.35;0.45;1"'
-        f' begin="{start}s" dur="{period}s" repeatCount="indefinite"/>',
+def idle_timing(start, period=DEVICE_CYCLE):
+    return f'begin="{start:g}s" dur="{period:g}s" repeatCount="indefinite"'
+
+
+def idle_cursor():
+    timing = idle_timing(IDLE_START, 2.7)
+    return animated_rect(58, 53, 7, 10, CREAM, [
+        '<animate attributeName="x" values="58;66;74;82;90;96;96" calcMode="discrete"'
+        f' keyTimes="0;0.13;0.26;0.39;0.52;0.65;1" {timing}/>',
+        '<animate attributeName="opacity" values="0;1;1;0;0"'
+        f' keyTimes="0;0.06;0.70;0.80;1" {timing}/>',
     ], phase="idle")
+
+
+def idle_packet(route, start, color):
+    timing = idle_timing(start)
+    return "\n".join([
+        '<g class="motion-only idle" opacity="0">',
+        rect(-4, -4, 8, 8, color),
+        rect(-2, -2, 4, 4, CREAM),
+        f'<animateMotion path="{route}" calcMode="linear" keyPoints="0;1;1"'
+        f' keyTimes="0;{PACKET_ARRIVAL:g};1" {timing}/>',
+        '<animate attributeName="opacity" values="0;1;1;0;0"'
+        f' keyTimes="0;0.035;0.22;0.29;1" {timing}/>',
+        '</g>',
+    ])
 
 
 def monitor():
@@ -137,25 +160,45 @@ def monitor():
         rect(36, 100, 72, 8, GOLD),
         rect(52, 100, 40, 4, CREAM),
         *screen_startup(),
-        idle_light(96, 54, 4, 8, CREAM, 3.1, 4.8),
+        idle_cursor(),
     ], pixel=True)
 
 
-def disk_stack():
+def disk_stack(first_pulse):
     parts = []
     for row in range(3):
         y = row * 16
+        timing = idle_timing(first_pulse + row * 0.24)
         parts.extend([
             path(f"M8 {y}H96V{y + 4}H104V{y + 12}H96V{y + 16}H0V{y + 4}H8Z", GOLD),
             rect(4, y + 12, 92, 4, COPPER),
             rect(12, y + 4, 40, 4, "#77523d"),
             rect(72, y + 4, 8, 4, INK),
             rect(84, y + 4, 8, 4, CREAM),
+            animated_rect(76, y + 4, 20, 5, MINT, [
+                '<animate attributeName="opacity" values="0;1;1;0;0"'
+                f' keyTimes="0;0.02;0.065;0.105;1" {timing}/>',
+            ], phase="idle"),
         ])
     return group(22, 150, parts, pixel=True)
 
 
-def media_view():
+def idle_focus(start):
+    timing = idle_timing(start)
+    corners = "M0 0H8V2H2V6H0Z M20 0H28V6H26V2H20Z M0 14H2V18H8V20H0Z M26 14H28V20H20V18H26Z"
+    return "\n".join([
+        '<g class="motion-only idle" opacity="0">',
+        path(corners, MINT),
+        rect(13, 9, 2, 2, CREAM),
+        '<animateMotion path="M22 24H58" calcMode="linear" keyPoints="0;0;1;1"'
+        f' keyTimes="0;0.06;0.44;1" {timing}/>',
+        '<animate attributeName="opacity" values="0;1;1;0;0"'
+        f' keyTimes="0;0.06;0.47;0.58;1" {timing}/>',
+        '</g>',
+    ])
+
+
+def media_view(focus_start):
     return group(248, 142, [
         path("M4 0H96V4H104V56H100V60H0V4H4Z", "#6aa99b"),
         rect(4, 4, 96, 4, MINT),
@@ -167,12 +210,15 @@ def media_view():
         path("M14 36H18V44H26V48H14Z", CREAM),
         path("M90 36H86V44H78V48H90Z", CREAM),
         rect(38, 60, 28, 4, "#4c7c75"),
+        idle_focus(focus_start),
     ], pixel=True)
 
 
 def interest_map(x, y):
     to_data = "M176 120V132H74V148"
     to_media = "M176 120V132H298V140"
+    media_start = IDLE_START + DEVICE_CYCLE / 2
+    travel_time = DEVICE_CYCLE * PACKET_ARRIVAL
     parts = [
         path("M12 0H344V8H356V204H348V220H12V212H0V12H12Z", PANEL),
         path("M12 0H344V4H16V12H0V8H12Z", SEAM),
@@ -186,13 +232,14 @@ def interest_map(x, y):
         rect(68, 142, 12, 12, "#b08456"),
         rect(292, 134, 12, 12, "#72a895"),
         monitor(),
-        disk_stack(),
-        media_view(),
+        disk_stack(IDLE_START + travel_time),
+        media_view(media_start + travel_time),
         signal(to_data, 0.83, 1.05, GOLD),
         signal(to_media, 1.5, 1.08, MINT),
         arrival(106, 154, 8, 4, 1.82),
         arrival(304, 162, 8, 8, 2.52),
-        idle_light(94, 186, 8, 4, MINT, 3.7, 6.4),
+        idle_packet(to_data, IDLE_START, GOLD),
+        idle_packet(to_media, media_start, MINT),
     ]
     return group(x, y, parts, pixel=True)
 

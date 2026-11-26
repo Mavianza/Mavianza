@@ -27,7 +27,7 @@ Banner memakai pixel art 16-bit dengan fokus kuat pada nama. Skala desainnya 3 u
 - Monitor, penyimpanan, dan bingkai visual menggambarkan antarmuka web, sistem informasi, dan multimedia. Ketiganya berada dalam satu ilustrasi, dengan jarak yang menjaga nama tetap dominan.
 - Susunan ponsel menempatkan ilustrasi di bawah nama supaya teks dan gambar tetap terbaca. Kartu statistik memakai sudut bertangga dan grafik yang sejajar dengan kisi piksel.
 - Opening menampilkan nama per blok, menyalakan layar, lalu mengirim sinyal ke dua perangkat. Gerak pembuka selesai dalam sekitar 2,9 detik.
-- Saat idle, kursor di layar dan lampu penyimpanan berkedip pelan dengan tempo berbeda. Gunakan panah di atas banner untuk menyembunyikannya. Preferensi pengurangan gerak menampilkan banner diam.
+- Saat idle, kursor bergerak per langkah. Paket piksel bergantian menuju penyimpanan dan layar multimedia. Saat paket sampai, lampu penyimpanan menyala berurutan atau bingkai fokus bergerak di layar multimedia. Gunakan panah di atas banner untuk menyembunyikannya. Preferensi pengurangan gerak menampilkan banner diam.
 
 Buat ulang kedua banner dengan `python3 scripts/render_banner.py`. Panel statistik dirender oleh `scripts/profile_stats.py` saat GitHub Actions mengambil data.
 
