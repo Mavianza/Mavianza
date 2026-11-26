@@ -10,6 +10,8 @@
 
 Saya mahasiswa Teknik Informatika di Universitas Mataram. Saya suka membuat prototipe antarmuka web, memodelkan data untuk sistem informasi, dan mencoba AR untuk materi belajar.
 
+[WhatsApp](https://wa.me/6281629632312) · [Instagram](https://www.instagram.com/alfath_mav/) · [Email](mailto:amav1305@gmail.com)
+
 ## Aktivitas GitHub
 
 <p>
