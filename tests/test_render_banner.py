@@ -65,7 +65,7 @@ class BannerTest(unittest.TestCase):
     def test_readme_disclosure_can_hide_both_banner_sizes(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         disclosure = readme.split("<details open>", 1)[1].split("</details>", 1)[0]
-        self.assertIn("<summary>Animasi profil</summary>", disclosure)
+        self.assertRegex(disclosure, r'<summary aria-label="[^"]+" title="[^"]+">&#160;</summary>')
         self.assertIn('src="assets/peta-minat.svg"', disclosure)
         self.assertIn('srcset="assets/peta-minat-mobile.svg"', disclosure)
         self.assertNotIn("assets/streak.svg", disclosure)

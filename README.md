@@ -1,5 +1,5 @@
 <details open>
-<summary>Animasi profil</summary>
+<summary aria-label="Tampilkan atau sembunyikan banner" title="Tampilkan atau sembunyikan banner">&#160;</summary>
 
 <picture>
   <source media="(max-width: 640px)" srcset="assets/peta-minat-mobile.svg" width="400" height="464">
@@ -16,7 +16,5 @@ Saya mahasiswa Teknik Informatika di Universitas Mataram. Saya suka membuat prot
   <img src="assets/streak.svg" width="370" alt="Streak GitHub saat ini, rekor, dan aktivitas 30 hari terakhir.">
   <img src="assets/bahasa.svg" width="370" alt="Komposisi bahasa menurut ukuran kode di repositori publik.">
 </p>
-
-Streak memakai kalender kontribusi 365 hari terakhir. Komposisi bahasa dihitung dari ukuran kode di repo publik, dengan fork dan repo profil dikecualikan.
 
 [Lihat kalender kontribusi](https://github.com/Mavianza#js-contribution-activity-description)
