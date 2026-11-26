@@ -26,7 +26,8 @@ Banner memakai pixel art 16-bit dengan fokus kuat pada nama. Skala desainnya 3 u
 - Bidang tinta gelap memberi kontras pada huruf warna kertas. Warna tembaga menandai perangkat, dan mint menyorot data.
 - Monitor, penyimpanan, dan bingkai visual menggambarkan antarmuka web, sistem informasi, dan multimedia. Ketiganya berada dalam satu ilustrasi, dengan jarak yang menjaga nama tetap dominan.
 - Susunan ponsel menempatkan ilustrasi di bawah nama supaya teks dan gambar tetap terbaca. Kartu statistik memakai sudut bertangga dan grafik yang sejajar dengan kisi piksel.
-- Sinyal bergerak dari monitor ke dua perangkat untuk menunjukkan relasi minat. Animasi selesai dalam 2,8 detik dan menghormati preferensi pengurangan gerak.
+- Opening menampilkan nama per blok, menyalakan layar, lalu mengirim sinyal ke dua perangkat. Gerak pembuka selesai dalam sekitar 2,9 detik.
+- Saat idle, kursor di layar dan lampu penyimpanan berkedip pelan dengan tempo berbeda. Bagian **Animasi profil** dapat ditutup untuk menyembunyikan gerak. Preferensi pengurangan gerak menampilkan banner diam.
 
 Buat ulang kedua banner dengan `python3 scripts/render_banner.py`. Panel statistik dirender oleh `scripts/profile_stats.py` saat GitHub Actions mengambil data.
 

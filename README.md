@@ -1,7 +1,12 @@
+<details open>
+<summary>Animasi profil</summary>
+
 <picture>
   <source media="(max-width: 640px)" srcset="assets/peta-minat-mobile.svg" width="400" height="464">
   <img src="assets/peta-minat.svg" width="800" fetchpriority="high" alt="Alfath Mavianza, Teknik Informatika Universitas Mataram. Peta minat dalam pixel art untuk antarmuka web, sistem informasi, dan multimedia interaktif.">
 </picture>
+
+</details>
 
 Saya mahasiswa Teknik Informatika di Universitas Mataram. Saya suka membuat prototipe antarmuka web, memodelkan data untuk sistem informasi, dan mencoba AR untuk materi belajar.
 

@@ -13,6 +13,11 @@
 </g>
 <g transform="translate(26 87)" shape-rendering="crispEdges">
 <path d="M0 0h7v7h-7Z M28 0h7v7h-7Z M0 7h14v7h-14Z M21 7h14v7h-14Z M0 14h35v7h-35Z M0 21h7v7h-7Z M14 21h7v7h-7Z M28 21h7v7h-7Z M0 28h7v7h-7Z M28 28h7v7h-7Z M0 35h7v7h-7Z M28 35h7v7h-7Z M0 42h7v7h-7Z M28 42h7v7h-7Z M49 0h21v7h-21Z M42 7h14v7h-14Z M63 7h14v7h-14Z M42 14h14v7h-14Z M63 14h14v7h-14Z M42 21h35v7h-35Z M42 28h14v7h-14Z M63 28h14v7h-14Z M42 35h14v7h-14Z M63 35h14v7h-14Z M42 42h14v7h-14Z M63 42h14v7h-14Z M84 0h14v7h-14Z M105 0h14v7h-14Z M84 7h14v7h-14Z M105 7h14v7h-14Z M84 14h14v7h-14Z M105 14h14v7h-14Z M84 21h14v7h-14Z M105 21h14v7h-14Z M91 28h7v7h-7Z M105 28h7v7h-7Z M91 35h7v7h-7Z M105 35h7v7h-7Z M98 42h7v7h-7Z M126 0h35v7h-35Z M140 7h7v7h-7Z M140 14h7v7h-7Z M140 21h7v7h-7Z M140 28h7v7h-7Z M140 35h7v7h-7Z M126 42h35v7h-35Z M175 0h21v7h-21Z M168 7h14v7h-14Z M189 7h14v7h-14Z M168 14h14v7h-14Z M189 14h14v7h-14Z M168 21h35v7h-35Z M168 28h14v7h-14Z M189 28h14v7h-14Z M168 35h14v7h-14Z M189 35h14v7h-14Z M168 42h14v7h-14Z M189 42h14v7h-14Z M210 0h14v7h-14Z M238 0h7v7h-7Z M210 7h21v7h-21Z M238 7h7v7h-7Z M210 14h21v7h-21Z M238 14h7v7h-7Z M210 21h14v7h-14Z M231 21h14v7h-14Z M210 28h14v7h-14Z M231 28h14v7h-14Z M210 35h14v7h-14Z M238 35h7v7h-7Z M210 42h14v7h-14Z M238 42h7v7h-7Z M252 0h35v7h-35Z M273 7h14v7h-14Z M266 14h14v7h-14Z M259 21h14v7h-14Z M252 28h14v7h-14Z M252 35h14v7h-14Z M252 42h35v7h-35Z M301 0h21v7h-21Z M294 7h14v7h-14Z M315 7h14v7h-14Z M294 14h14v7h-14Z M315 14h14v7h-14Z M294 21h35v7h-35Z M294 28h14v7h-14Z M315 28h14v7h-14Z M294 35h14v7h-14Z M315 35h14v7h-14Z M294 42h14v7h-14Z M315 42h14v7h-14Z" fill="#fbefd2"/>
+<rect class="motion-only opening" x="0" y="0" width="329" height="49" fill="#111c27" opacity="0">
+<animate attributeName="opacity" values="1;1" begin="0s" dur="0.7s"/>
+<animate attributeName="x" values="0;56;112;168;224;280;329" calcMode="discrete" begin="0s" dur="0.7s"/>
+<animate attributeName="width" values="329;273;217;161;105;49;0" calcMode="discrete" begin="0s" dur="0.7s"/>
+</rect>
 </g>
 <text class="affiliation" x="26" y="162">Teknik Informatika · Universitas Mataram</text>
 <g transform="translate(22 187)" shape-rendering="crispEdges">
@@ -47,6 +52,16 @@
 <rect x="44" y="92" width="56" height="8" fill="#a76b47"/>
 <rect x="36" y="100" width="72" height="8" fill="#efb46e"/>
 <rect x="52" y="100" width="40" height="4" fill="#fbefd2"/>
+<rect class="motion-only opening" x="16" y="16" width="112" height="56" fill="#111c27" opacity="0">
+<animate attributeName="opacity" values="1;1;0" keyTimes="0;0.18;1" begin="0s" dur="0.78s"/>
+</rect>
+<rect class="motion-only opening" x="20" y="20" width="104" height="4" fill="#92e1bb" opacity="0">
+<animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.2;0.72;1" begin="0.14s" dur="0.58s"/>
+<animate attributeName="y" values="20;28;36;44;52;60;64" calcMode="discrete" begin="0.14s" dur="0.58s"/>
+</rect>
+<rect class="motion-only idle" x="96" y="54" width="4" height="8" fill="#fbefd2" opacity="0">
+<animate attributeName="opacity" values="0;0;0.92;0.92;0;0" keyTimes="0;0.06;0.14;0.35;0.45;1" begin="3.1s" dur="4.8s" repeatCount="indefinite"/>
+</rect>
 </g>
 <g transform="translate(22 150)" shape-rendering="crispEdges">
 <path d="M8 0H96V4H104V12H96V16H0V4H8Z" fill="#efb46e"/>
@@ -77,24 +92,25 @@
 <path d="M90 36H86V44H78V48H90Z" fill="#fbefd2"/>
 <rect x="38" y="60" width="28" height="4" fill="#4c7c75"/>
 </g>
-<g class="motion-only" opacity="0" shape-rendering="crispEdges">
+<g class="motion-only opening" opacity="0" shape-rendering="crispEdges">
 <rect x="-3" y="-3" width="6" height="6" fill="#efb46e"/>
-<animateMotion path="M176 120V132H74V148" begin="0.55s" dur="1.15s"/>
-<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.84;1" begin="0.55s" dur="1.15s"/>
+<animateMotion path="M176 120V132H74V148" begin="0.83s" dur="1.05s"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.84;1" begin="0.83s" dur="1.05s"/>
 </g>
-<g class="motion-only" opacity="0" shape-rendering="crispEdges">
+<g class="motion-only opening" opacity="0" shape-rendering="crispEdges">
 <rect x="-3" y="-3" width="6" height="6" fill="#92e1bb"/>
-<animateMotion path="M176 120V132H298V140" begin="1.32s" dur="1.2s"/>
-<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.84;1" begin="1.32s" dur="1.2s"/>
+<animateMotion path="M176 120V132H298V140" begin="1.5s" dur="1.08s"/>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.84;1" begin="1.5s" dur="1.08s"/>
 </g>
-<g class="motion-only" opacity="0">
-<rect x="106" y="154" width="8" height="4" fill="#92e1bb"/>
-<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.2;1" begin="1.63s" dur="0.36s"/>
-</g>
-<g class="motion-only" opacity="0">
-<rect x="304" y="162" width="8" height="8" fill="#92e1bb"/>
-<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.2;1" begin="2.46s" dur="0.36s"/>
-</g>
+<rect class="motion-only opening" x="106" y="154" width="8" height="4" fill="#92e1bb" opacity="0">
+<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.2;1" begin="1.82s" dur="0.36s"/>
+</rect>
+<rect class="motion-only opening" x="304" y="162" width="8" height="8" fill="#92e1bb" opacity="0">
+<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.2;1" begin="2.52s" dur="0.36s"/>
+</rect>
+<rect class="motion-only idle" x="94" y="186" width="8" height="4" fill="#92e1bb" opacity="0">
+<animate attributeName="opacity" values="0;0;0.92;0.92;0;0" keyTimes="0;0.06;0.14;0.35;0.45;1" begin="3.7s" dur="6.4s" repeatCount="indefinite"/>
+</rect>
 </g>
 <g transform="translate(24 429)">
 <path d="M0 0H16V12H0Z M3 4V9H13V4Z" fill="#efb46e" fill-rule="evenodd"/>

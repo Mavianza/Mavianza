@@ -41,7 +41,27 @@ def group(x, y, parts, *, pixel=False):
     return f'<g transform="translate({x} {y})"{crisp}>\n' + "\n".join(parts) + "\n</g>"
 
 
-def word(text, x, y, size, color):
+def animated_rect(x, y, width, height, color, animations, *, phase="opening"):
+    return "\n".join([
+        f'<rect class="motion-only {phase}" x="{x}" y="{y}" width="{width}" height="{height}" fill="{color}" opacity="0">',
+        *animations,
+        '</rect>',
+    ])
+
+
+def name_wipe(length, size):
+    width = (length * 6 - 1) * size
+    positions = (*range(0, width, size * 8), width)
+    left_edges = ";".join(str(position) for position in positions)
+    widths = ";".join(str(width - position) for position in positions)
+    return animated_rect(0, 0, width, 7 * size, INK, [
+        '<animate attributeName="opacity" values="1;1" begin="0s" dur="0.7s"/>',
+        f'<animate attributeName="x" values="{left_edges}" calcMode="discrete" begin="0s" dur="0.7s"/>',
+        f'<animate attributeName="width" values="{widths}" calcMode="discrete" begin="0s" dur="0.7s"/>',
+    ])
+
+
+def word(text, x, y, size, color, *, reveal=False):
     pixels = []
     for column, letter in enumerate(text):
         for row, pattern in enumerate(LETTER_GRID[letter]):
@@ -52,13 +72,16 @@ def word(text, x, y, size, color):
                     px, py = (column * 6 + left) * size, row * size
                     pixels.append(f"M{px} {py}h{width * size}v{size}h{-width * size}Z")
                 left += width
-    return group(x, y, [path(" ".join(pixels), color)], pixel=True)
+    parts = [path(" ".join(pixels), color)]
+    if reveal:
+        parts.append(name_wipe(len(text), size))
+    return group(x, y, parts, pixel=True)
 
 
 def signal(route, start, travel, color):
     # The base opacity hides the signal when the timed animation ends.
     return (
-        '<g class="motion-only" opacity="0" shape-rendering="crispEdges">\n'
+        '<g class="motion-only opening" opacity="0" shape-rendering="crispEdges">\n'
         + rect(-3, -3, 6, 6, color)
         + f'\n<animateMotion path="{route}" begin="{start}s" dur="{travel}s"/>'
         + f'\n<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.84;1"'
@@ -67,12 +90,29 @@ def signal(route, start, travel, color):
 
 
 def arrival(x, y, width, height, start):
-    return (
-        '<g class="motion-only" opacity="0">\n'
-        + rect(x, y, width, height, MINT)
-        + f'\n<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.2;1" begin="{start}s" dur="0.36s"/>'
-        + '\n</g>'
-    )
+    return animated_rect(x, y, width, height, MINT, [
+        f'<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.2;1" begin="{start}s" dur="0.36s"/>',
+    ])
+
+
+def screen_startup():
+    return [
+        animated_rect(16, 16, 112, 56, INK, [
+            '<animate attributeName="opacity" values="1;1;0" keyTimes="0;0.18;1" begin="0s" dur="0.78s"/>',
+        ]),
+        animated_rect(20, 20, 104, 4, MINT, [
+            '<animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.2;0.72;1" begin="0.14s" dur="0.58s"/>',
+            '<animate attributeName="y" values="20;28;36;44;52;60;64" calcMode="discrete" begin="0.14s" dur="0.58s"/>',
+        ]),
+    ]
+
+
+def idle_light(x, y, width, height, color, start, period):
+    return animated_rect(x, y, width, height, color, [
+        '<animate attributeName="opacity" values="0;0;0.92;0.92;0;0"'
+        ' keyTimes="0;0.06;0.14;0.35;0.45;1"'
+        f' begin="{start}s" dur="{period}s" repeatCount="indefinite"/>',
+    ], phase="idle")
 
 
 def monitor():
@@ -96,6 +136,8 @@ def monitor():
         rect(44, 92, 56, 8, COPPER),
         rect(36, 100, 72, 8, GOLD),
         rect(52, 100, 40, 4, CREAM),
+        *screen_startup(),
+        idle_light(96, 54, 4, 8, CREAM, 3.1, 4.8),
     ], pixel=True)
 
 
@@ -146,10 +188,11 @@ def interest_map(x, y):
         monitor(),
         disk_stack(),
         media_view(),
-        signal(to_data, 0.55, 1.15, GOLD),
-        signal(to_media, 1.32, 1.20, MINT),
-        arrival(106, 154, 8, 4, 1.63),
-        arrival(304, 162, 8, 8, 2.46),
+        signal(to_data, 0.83, 1.05, GOLD),
+        signal(to_media, 1.5, 1.08, MINT),
+        arrival(106, 154, 8, 4, 1.82),
+        arrival(304, 162, 8, 8, 2.52),
+        idle_light(94, 186, 8, 4, MINT, 3.7, 6.4),
     ]
     return group(x, y, parts, pixel=True)
 
@@ -174,7 +217,7 @@ def banner(*, mobile):
         body = [
             rect(26, 27, 48, 4, GOLD),
             word("ALFATH", 26, 43, 5, GOLD),
-            word("MAVIANZA", 26, 87, 7, CREAM),
+            word("MAVIANZA", 26, 87, 7, CREAM, reveal=True),
             '<text class="affiliation" x="26" y="162">Teknik Informatika · Universitas Mataram</text>',
             interest_map(22, 187),
             legend(24, 429, "Web", "web"),
@@ -186,7 +229,7 @@ def banner(*, mobile):
         body = [
             rect(36, 44, 64, 4, GOLD),
             word("ALFATH", 36, 68, 6, GOLD),
-            word("MAVIANZA", 36, 124, 7, CREAM),
+            word("MAVIANZA", 36, 124, 7, CREAM, reveal=True),
             '<text class="affiliation" x="36" y="207">Teknik Informatika</text>',
             '<text class="affiliation" x="36" y="231">Universitas Mataram</text>',
             interest_map(410, 24),
