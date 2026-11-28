@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="370" height="224" viewBox="0 0 370 224" role="img" aria-labelledby="title description">
 <title id="title">Streak GitHub</title>
-<desc id="description">Streak aktif 35 hari. Rekor 35 hari. 255 kontribusi dalam 365 hari.</desc>
+<desc id="description">Streak aktif 36 hari. Rekor 36 hari. 258 kontribusi dalam 365 hari.</desc>
 <style>
   .heading { font: 700 22px system-ui, sans-serif; fill: #fbefd2; }
   .value { font: 700 21px ui-monospace, monospace; fill: #fbefd2; }
@@ -11,44 +11,44 @@
 <path d="M8 .5H362V4H366V8H369.5V216H366V220H362V223.5H8V220H4V216H.5V8H4V4H8Z" fill="#192b36" stroke="#35515b" shape-rendering="crispEdges"/>
 <text x="20" y="36" class="heading">Streak GitHub</text>
 <text x="20" y="58" class="small">Kalender 365 hari</text>
-<text x="20" y="113" class="primary-value">35</text>
+<text x="20" y="113" class="primary-value">36</text>
 <text x="20" y="134" class="small">Streak aktif</text>
 <text x="171" y="89" class="small">Rekor hari</text>
-<text x="349" y="89" class="value" text-anchor="end">35</text>
+<text x="349" y="89" class="value" text-anchor="end">36</text>
 <path d="M171 100H350" fill="none" stroke="#35515b"/>
 <text x="171" y="124" class="small">Kontribusi</text>
-<text x="349" y="124" class="value" text-anchor="end">255</text>
+<text x="349" y="124" class="value" text-anchor="end">258</text>
 <path d="M20 187H350" fill="none" stroke="#35515b"/>
-<rect x="20" y="147" width="7" height="40" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="20" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="31" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="42" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="53" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="53" y="175" width="7" height="12" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="64" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="75" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="86" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="97" y="183" width="7" height="4" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="108" y="175" width="7" height="12" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="97" y="171" width="7" height="16" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="108" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="119" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="130" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="141" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="152" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="163" y="175" width="7" height="12" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="174" y="183" width="7" height="4" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="185" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="196" y="171" width="7" height="16" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="207" y="171" width="7" height="16" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="141" y="175" width="7" height="12" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="152" y="171" width="7" height="16" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="163" y="183" width="7" height="4" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="174" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="185" y="167" width="7" height="20" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="196" y="163" width="7" height="24" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="207" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="218" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="229" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="240" y="183" width="7" height="4" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="251" y="175" width="7" height="12" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="229" y="183" width="7" height="4" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="240" y="171" width="7" height="16" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="251" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="262" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="273" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="284" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="295" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="306" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="317" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
-<rect x="328" y="159" width="7" height="28" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="306" y="175" width="7" height="12" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="317" y="147" width="7" height="40" fill="#92e1bb" shape-rendering="crispEdges"/>
+<rect x="328" y="179" width="7" height="8" fill="#92e1bb" shape-rendering="crispEdges"/>
 <rect x="339" y="183" width="7" height="4" fill="#92e1bb" shape-rendering="crispEdges"/>
 <text x="20" y="205" class="small">30 hari terakhir</text>
-<text x="349" y="205" class="small" text-anchor="end">2026-11-27</text>
+<text x="349" y="205" class="small" text-anchor="end">2026-11-28</text>
 </svg>

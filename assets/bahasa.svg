@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="370" height="224" viewBox="0 0 370 224" role="img" aria-labelledby="title description">
 <title id="title">Bahasa repositori</title>
-<desc id="description">Jupyter Notebook 58,0%. Python 8,5%. Java 8,4%. JavaScript 8,1%. Lainnya 17,0%</desc>
+<desc id="description">Jupyter Notebook 57,5%. Python 8,9%. Java 8,3%. JavaScript 8,2%. Lainnya 17,0%</desc>
 <style>
   .heading { font: 700 22px system-ui, sans-serif; fill: #fbefd2; }
   .value { font: 700 21px ui-monospace, monospace; fill: #fbefd2; }
@@ -13,24 +13,24 @@
 <text x="20" y="58" class="small">Ukuran kode di repositori publik</text>
 <text x="20" y="86" class="row">Jupyter Notebook</text>
 <rect x="162" y="77" width="121" height="8" fill="#35515b"/>
-<rect x="162" y="77" width="70.194" height="8" fill="#92e1bb"/>
-<text x="349" y="86" class="row" text-anchor="end">58,0%</text>
+<rect x="162" y="77" width="69.620" height="8" fill="#92e1bb"/>
+<text x="349" y="86" class="row" text-anchor="end">57,5%</text>
 <text x="20" y="108" class="row">Python</text>
 <rect x="162" y="99" width="121" height="8" fill="#35515b"/>
-<rect x="162" y="99" width="10.266" height="8" fill="#92e1bb"/>
-<text x="349" y="108" class="row" text-anchor="end">8,5%</text>
+<rect x="162" y="99" width="10.778" height="8" fill="#92e1bb"/>
+<text x="349" y="108" class="row" text-anchor="end">8,9%</text>
 <text x="20" y="130" class="row">Java</text>
 <rect x="162" y="121" width="121" height="8" fill="#35515b"/>
-<rect x="162" y="121" width="10.142" height="8" fill="#92e1bb"/>
-<text x="349" y="130" class="row" text-anchor="end">8,4%</text>
+<rect x="162" y="121" width="10.059" height="8" fill="#92e1bb"/>
+<text x="349" y="130" class="row" text-anchor="end">8,3%</text>
 <text x="20" y="152" class="row">JavaScript</text>
 <rect x="162" y="143" width="121" height="8" fill="#35515b"/>
-<rect x="162" y="143" width="9.839" height="8" fill="#92e1bb"/>
-<text x="349" y="152" class="row" text-anchor="end">8,1%</text>
+<rect x="162" y="143" width="9.933" height="8" fill="#92e1bb"/>
+<text x="349" y="152" class="row" text-anchor="end">8,2%</text>
 <text x="20" y="174" class="row">Lainnya</text>
 <rect x="162" y="165" width="121" height="8" fill="#35515b"/>
-<rect x="162" y="165" width="20.559" height="8" fill="#92e1bb"/>
+<rect x="162" y="165" width="20.610" height="8" fill="#92e1bb"/>
 <text x="349" y="174" class="row" text-anchor="end">17,0%</text>
-<text x="20" y="205" class="small">49 repo dengan data bahasa</text>
-<text x="349" y="205" class="small" text-anchor="end">2026-11-27</text>
+<text x="20" y="205" class="small">50 repo dengan data bahasa</text>
+<text x="349" y="205" class="small" text-anchor="end">2026-11-28</text>
 </svg>
